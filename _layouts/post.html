@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+{%- if content contains 'mermaid' -%}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.4.0/mermaid.min.js"></script>
+<script>
+    const config = {
+        startOnLoad: true,
+        theme: 'default',
+        flowchart: {
+            useMaxWidth: false,
+            htmlLabels: true
+        }
+    };
+    mermaid.initialize(config);
+    window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+</script>
+{% endif %}
+
+{{ content }}
